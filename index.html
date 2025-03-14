@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en" style="scroll-behavior: smooth;">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Cover Page</title>
+    <!-- <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"> -->
+    <link rel="stylesheet" href="tailwind.min.css" />
+  </head>
+  <body class="bg-gray-200 min-h-screen flex flex-col">
+    <svg id="icons">
+      <symbol id="rooms" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-house w-6 h-6">
+        <path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"></path>
+        <path d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+      </symbol>
+      <symbol id="roommates" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-users w-6 h-6"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+        <circle cx="9" cy="7" r="4"></circle>
+        <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+        <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+      </symbol>
+      <symbol id="verify" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shield w-6 h-6">
+        <path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path>
+      </symbol>
+      <symbol id="messages" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-message-circle w-6 h-6">
+        <path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"></path>
+      </symbol>
+      <symbol id="more" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu w-6 h-6">
+        <line x1="4" x2="20" y1="12" y2="12"></line>
+        <line x1="4" x2="20" y1="6" y2="6"></line>
+        <line x1="4" x2="20" y1="18" y2="18"></line>
+      </symbol>
+      <symbol id="price" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-dollar-sign w-4 text-tertiary stroke-[2.5]">
+        <line x1="12" x2="12" y1="2" y2="22"></line>
+        <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+      </symbol>
+      <symbol id="dur" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-log-out w-4 text-tertiary stroke-[2.5]">
+        <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+        <polyline points="16 17 21 12 16 7"></polyline>
+        <line x1="21" x2="9" y1="12" y2="12"></line>
+      </symbol>
+      <symbol id="gender" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-user w-4 text-tertiary stroke-[2.5]">
+        <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path>
+        <circle cx="12" cy="7" r="4"></circle>
+      </symbol>
+      <symbol id="amenities" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-building w-4 text-tertiary stroke-[2.5]">
+        <rect width="16" height="20" x="4" y="2" rx="2" ry="2"></rect>
+        <path d="M9 22v-4h6v4"></path>
+        <path d="M8 6h.01"></path>
+        <path d="M16 6h.01"></path>
+        <path d="M12 6h.01"></path>
+        <path d="M12 10h.01"></path>
+        <path d="M12 14h.01"></path>
+        <path d="M16 10h.01"></path>
+        <path d="M16 14h.01"></path>
+        <path d="M8 10h.01"></path>
+        <path d="M8 14h.01"></path>
+      </symbol>
+      <symbol id="sort" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-down-up w-4 text-tertiary stroke-[2.5]">
+        <path d="m3 16 4 4 4-4"></path>
+        <path d="M7 20V4"></path>
+        <path d="m21 8-4-4-4 4"></path>
+        <path d="M17 4v16"></path>
+      </symbol>
+      <symbol id="search" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-search w-4 text-tertiary stroke-[2.5]">
+        <circle cx="11" cy="11" r="8"></circle>
+        <path d="m21 21-4.3-4.3"></path>
+      </symbol>
+      <!-- <symbol id="x" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x w-4 text-red-500 stroke-[2.5]">
+        <path d="M18 6 6 18"></path>
+        <path d="m6 6 12 12"></path>
+      </symbol>
+      <symbol id="caret" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down h-4 w-4 opacity-50" aria-hidden="true">
+        <path d="m6 9 6 6 6-6"></path>
+      </symbol> -->
+      <symbol id="chevron-up" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-up w-8 h-8 font-bold">
+        <path d="m18 15-6-6-6 6"></path>
+      </symbol>
+      <symbol id="fb" width="28" class="lucide lucide-facebook" height="28" viewBox="0 0 24 24" fill="none" stroke="#D6DF24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+      </symbol>
+      <symbol id="tw" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#D6DF24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-twitter">
+        <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path>
+      </symbol>
+      <symbol id="ig" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#D6DF24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-instagram">
+        <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+        <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line>
+      </symbol>
+    </svg>
+
+    <header id="header" class="w-full fixed top-0 z-20 flex flex-col items-center justify-center transition duration-200">
+      <nav class="bg-white p-2 w-full fixed bottom-0 left-0 right-0 lg:static mx-auto flex justify-between items-center">
+        <a href="#" class="ml-4 hidden lg:flex font-mono font-semibold items-center text-xl text-green-900 gap-2">
+          <img alt="logo" width="25" height="10" src="./assets/logo.svg"/>
+          RConnect
+        </a>
+        <div class="flex w-full lg:w-auto justify-around lg:justify-center space-x-4 font-bold text-xs lg:text-lg ml-4">
+          <a href="#rooms" class="grid justify-center text-green-700 lg:text-gray-400 text-center">
+            <svg width="48" height="24" class="lg:hidden w-full"><use xlink:href="#rooms"/></svg>
+            Rooms
+          </a>
+          <a href="#roommates" class="text-gray-700 text-center">
+            <svg width="48" height="24" class="lg:hidden text-yellow-500 w-full"><use xlink:href="#roommates"/></svg>
+            Roommates
+          </a>
+          <a href="#verify" class="text-center text-gray-700 lg:hidden">
+            <svg width="48" height="24" class="text-yellow-500 w-full"><use xlink:href="#verify"/></svg>
+            Verify
+          </a>
+          <a href="#messages" class="text-gray-700 lg:hidden">
+            <svg width="48" height="24" class="text-yellow-500 w-full"><use xlink:href="#messages"/></svg>
+            Messages
+          </a>
+          <a href="#more" class="text-gray-700 text-center lg:hidden">
+            <svg width="48" height="24" class="text-yellow-500 ml-6"><use xlink:href="#more"/></svg>
+            More
+          </a>
+        </div>
+        <div class="flex space-x-2 mr-4 hidden lg:block">
+          <button class="rounded-lg p-2 px-4 font-bold">Log in</button>
+          <button class="bg-gray-700 rounded-lg p-2 text-white px-4 font-bold">Sign up</button>
+        </div>
+      </nav>
+
+      <div class="flex flex-wrap w-11/12 gap-2 justify-center mt-4 pb-4 transition duration-300">
+        <div class="flex bg-gray-100 items-center rounded-full shadow-lg border-lg">
+          <svg width="40" height="20" class="ml-3 text-yellow-500"><use xlink:href="#search"/></svg>
+          <input type="text" placeholder="Where are you looking?" class="rounded-3xl border-none">
+        </div>
+        <div class="flex bg-gray-100 items-center rounded-full shadow-lg border-lg">
+          <svg width="40" height="20" class="ml-3 text-yellow-500"><use xlink:href="#price"/></svg>
+          <span class="-ml-2 mr-3">Price</span>  
+          <input type="text" placeholder="Min" class="rounded-l-3xl w-16 border-none">
+          <input type="text" placeholder="Max" class="rounded-r-3xl w-16 border-none">
+        </div>
+        <div class="flex bg-gray-100 items-center rounded-full shadow-lg border-lg">
+          <svg width="35" height="20" class="ml-3 text-yellow-500"><use xlink:href="#dur"/></svg>
+          <select class="outline-none rounded-3xl border-none">
+            <option value="" selected>Duration</option>
+            <option value="Flexible">Flexible</option>
+            <option value="Fixed">Fixed</option>
+            <option value="12-months">12 months</option>
+          </select>
+        </div>
+        <div class="flex bg-gray-100 items-center bg-white rounded-full shadow-lg border-lg">
+          <svg width="35" height="20" class="ml-3 text-yellow-500"><use xlink:href="#gender"/></svg>
+          <select class="outline-none rounded-3xl border-none">
+            <option value="" selected>Gender</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+          </select>
+        </div>
+        <div class="flex bg-gray-100 items-center bg-white rounded-full shadow-lg border-lg">
+          <svg width="35" height="20" class="ml-3 text-yellow-500"><use xlink:href="#amenities"/></svg>
+          <select class="outline-none rounded-3xl border-none">
+            <option value="" selected>Amenities</option>
+            <option value="Furnished">Furnished</option>
+            <option value="Unfurnished">Unfurnished</option>
+            <option value="Pet-Friendly">Pet Friendly</option>
+          </select>
+        </div>
+        <div class="flex bg-gray-100 items-center bg-white rounded-full shadow-lg border-lg">
+          <svg width="35" height="20" class="ml-3 text-yellow-500"><use xlink:href="#sort"/></svg>
+          <select class="outline-none rounded-3xl border-none w-20">
+            <option value="" selected>Sort</option>
+            <option value="Low-Price">Low Price</option>
+            <option value="Newest">Newest</option>
+          </select>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="flex mt-24 flex-col lg:justify-center lg:items-center lg:text-center px-4 mb-8">
+        <h1 class="text-4xl lg:text-6xl font-extrabold mb-2">Find your match.</h1>
+        <h1 class="text-4xl lg:text-6xl font-extrabold mb-6">Find your space.</h1>
+        <p class="text-lg mb-4 text-justify lg:text-center md:w-2/3">
+          RConnect helps you discover verified renters and shared spaces in your area. Whether you're searching for a roommate or listing a room, we make the process seamless and stress-free. Your perfect home starts here!
+        </p>
+        <a href="signup" class="text-green-500 font-semibold hover:text-green-800 transition duration-200">Verify a roommate</a>
+        <a href="signup" class="text-green-500 font-semibold mt-2 hover:text-green-800 transition duration-200">Post my open room - for free</a>
+      </section>
+
+      <hr class="border border-gray-300 my-12">
+
+      <article class="rooms w-full py-4 mt-8 grid justify-items-center justify-center grid-cols-1 md:grid-cols-2 lg:flex lg:flex-wrap mb-4"></article>
+    </main>
+
+    <hr>
+
+    <footer class="md:flex block pl-4 justify-around items-start bg-black text-white w-full mt-8 mb-10 lg:mb-2 py-8 md:py-4 text-sm">
+      <div class="grid py-4 gap-2">
+        <h2 class="text-lg font-bold mb-1 lg:mb-2 underline lg:no-underline">Support</h2>
+        <span class="cursor-pointer hover:text-yellow-300 transition-all duration-200 lg:hover:translate-x-4 transform-gpu">Help Center</span>
+        <span class="cursor-pointer hover:text-yellow-300 transition-all duration-200 lg:hover:translate-x-4 transform-gpu">Privacy & Terms</span>
+        <span class="cursor-pointer hover:text-yellow-300 transition-all duration-200 lg:hover:translate-x-4 transform-gpu">Contact Support</span>
+      </div>
+
+      <div class="grid py-4 gap-2">
+        <h2 class="text-lg font-bold mb-1 lg:mb-2 underline lg:no-underline">Company</h2>
+        <span class="cursor-pointer hover:text-yellow-300 transition-all duration-200 lg:hover:translate-x-4 transform-gpu">About Us</span>
+        <span class="cursor-pointer hover:text-yellow-300 transition-all duration-200 lg:hover:translate-x-4 transform-gpu">Site Map</span>
+      </div>
+
+      <div class="grid py-4 gap-2 lg:justify-center">
+        <div class="flex mt-4">
+          <a href="https://fb.com/" class="mr-2 p-1 rounded-xl transition-all duration-300 hover:bg-green-700 hover:scale-125 transform-gpu">
+            <svg width="30" height="30"><use xlink:href="#fb" /></svg>
+          </a>
+          <a href="https://x.com/" class="mr-2 p-1 rounded-xl transition-all duration-300 hover:bg-green-700 hover:scale-125 transform-gpu">
+            <svg width="30" height="30"><use xlink:href="#tw" /></svg>
+          </a>
+          <a href="https://instagram.com/" class="mr-2 p-1 rounded-xl transition-all duration-300 hover:bg-green-700 hover:scale-125 transform-gpu">
+            <svg width="30" height="30"><use xlink:href="#ig" /></svg>
+          </a>
+        </div>
+    
+        <script> document.write(`<span class="mt-3 text-green-400">&copy; <i>${new Date().getFullYear()} - B10 Tech.</i></span>`) </script>
+      </div>
+    </footer>
+
+    <button
+      id="slideUp"
+      class="fixed bottom-20 lg:bottom-10 right-10 bg-primary bg-green-800 shadow-xl hover:bg-primary/90 p-4 text-white rounded-full transition-all duration-300 opacity-0 translate-y-10 transform-gpu"
+      onclick="document.documentElement.scrollTop = 0"
+    >
+      <svg width="20" height="20" class="animate-bounce"><use xlink:href="#chevron-up" /></svg>
+    </button>
+
+    <script>
+      var header = document.querySelector('header');
+      var scroller = document.querySelector('#slideUp');
+
+      window.onscroll = () => {
+        if (document.body.scrollTop > 70 || document.documentElement.scrollTop > 70) {
+          header.classList.add('lg:bg-white');
+          scroller.classList.add('opacity-100');
+          scroller.classList.remove('translate-y-10');
+        } else {
+          header.classList.remove('lg:bg-white');
+          scroller.classList.remove('opacity-100');
+          scroller.classList.add('translate-y-10');
+        }
+      };
+    </script>
+    <script src="script.js" type="module"></script>
+  </body>
+</html>
